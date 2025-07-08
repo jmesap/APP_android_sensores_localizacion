@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_termometro"
+        android:layout_width="78dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_temp_value"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/termometro" />
+
+    <TextView
+        android:id="@+id/tv_temp_value"
+        android:layout_width="126dp"
+        android:layout_height="60dp"
+        android:text="@string/no_disponible"
+        android:textAlignment="center"
+        android:textColor="#FFB300"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/iv_humedad"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_termometro" />
+
+    <ImageView
+        android:id="@+id/iv_humedad"
+        android:layout_width="78dp"
+        android:layout_height="52dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_hum_value"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_temp_value"
+        app:srcCompat="@drawable/humedad" />
+
+    <TextView
+        android:id="@+id/tv_hum_value"
+        android:layout_width="126dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/no_disponible"
+        android:textAlignment="center"
+        android:textColor="#FFB300"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/mapa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_humedad" />
+
+
+    <fragment
+        android:id="@+id/mapa"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_hum_value"
+        tools:context=".MainActivity" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
